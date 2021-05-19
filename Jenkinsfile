@@ -1,11 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
                 nodejs('mattnode') {
                     sh 'npm install'
+                }
+              
+            }
+        }   stage('Test') {
+            steps {
+                nodejs('mattnode') {
+                    sh 'npm test'
                 }
               
             }
