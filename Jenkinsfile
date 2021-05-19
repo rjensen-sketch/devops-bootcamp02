@@ -8,7 +8,8 @@ pipeline {
                 }
               
             }
-        }   stage('Test') {
+        }   
+        stage('Test') {
             steps {
                 nodejs('mattnode') {
                     sh 'npm test'
