@@ -17,14 +17,5 @@ pipeline {
               
             }
         }
-        stage('Sonar') {
-            tool name: 'MattScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-            steps {
-                withSonarQubeEnv {
-                 // some block
-                }
-              
-            }
-        }
     }
 }
