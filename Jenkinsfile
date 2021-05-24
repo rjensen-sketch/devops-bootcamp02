@@ -1,20 +1,18 @@
 pipeline {
     agent any
+    tools {
+        nodejs 'rjnode'
+    }
+
     stages {
         stage('Build') {
             steps {
-                nodejs('mattnode') {
-                    sh 'npm install'
-                }
-              
+                sh 'npm install'
             }
         }   
         stage('Test') {
             steps {
-                nodejs('mattnode') {
-                    sh 'npm test'
-                }
-              
+                sh 'npm test'
             }
         }
     }
