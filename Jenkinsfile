@@ -15,5 +15,13 @@ pipeline {
                 sh 'npm test'
             }
         }
+        stage('Sonar Scan') {
+            steps {
+                withSonarQubeEnv('rjsonar') {
+                    //hudson.plugins.sonar.SonarRunnerInstallation('rjsonarscanner')
+                    sh 'printenv'
+                }
+            }
+        }
     }
 }
