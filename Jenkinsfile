@@ -18,8 +18,8 @@ pipeline {
         stage('Sonar Scan') {
             steps {
                 withSonarQubeEnv('rjsonar') {
-                    //hudson.plugins.sonar.SonarRunnerInstallation('rjsonarscanner')
-                    sh 'printenv'
+//                    sh "${tool("rjsonarscanner")}/bin/sonar-scanner -Dsonar.login=489fa9c26a3f6e0704855481ee5c89876e7ba9b4"
+                    sh "${tool("rjsonarscanner")}/bin/sonar-scanner"
                 }
             }
         }
