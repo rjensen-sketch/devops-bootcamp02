@@ -23,5 +23,10 @@ pipeline {
                 }
             }
         }
+        stage('DB Migrate') {
+            steps {
+                sh 'npm migrate'
+            }
+        }
     }
 }
